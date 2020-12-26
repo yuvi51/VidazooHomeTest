@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
+    <head> 
+        <script>
+            function changeDivId() {
+                let myIframe = document.getElementById('my-iframe');
+                let innerHtml1 = myIframe.contentWindow.document.body.innerHtml;
+                //let myDiv = innerDocument.getElementById('mydiv');
+                console.log(innerHtml1);
+                //innerDocument.document.getElementById("mydiv").setAttribute("id","mydiv2");
+            }
+        </script>
+    </head>
     <body> 
-        <iframe src="inner-cotent.html" title="my-iframe">
+        <iframe id="my-iframe" src="inner-cotent.html"></iframe>
+        <input type="button" value="click to change div id" onclick="changeDivId()">
     </body>
 </html>
