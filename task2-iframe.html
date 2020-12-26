@@ -3,16 +3,17 @@
     <head> 
         <script>
             function changeDivId() {
-                let myIframe = document.getElementById('my-iframe');
-                let innerHtml1 = myIframe.contentWindow.document.body.innerHtml;
-                //let myDiv = innerDocument.getElementById('mydiv');
-                console.log(innerHtml1);
-                //innerDocument.document.getElementById("mydiv").setAttribute("id","mydiv2");
+                const myIframe = document.getElementById('my-iframe');
+                const innerDoc = myIframe.contentDocument || myIframe.contentWindow.document;
+                const myDiv = innerDoc.getElementById('mydiv');
+                myDiv.setAttribute('id', 'mydiv2');
+
+                console.log('changed to the following id: ' + myDiv.id);
             }
         </script>
     </head>
     <body> 
-        <iframe id="my-iframe" src="https://github.com/yuvi51/VidazooHomeTest/iframe-content.html"></iframe>
+        <iframe id="my-iframe" src="task2-iframeContent.html"></iframe>
         <input type="button" value="click to change div id" onclick="changeDivId()">
     </body>
 </html>
